@@ -1,8 +1,45 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<section>
-    <h3>Home Page</h3>
-    <h5>Let's put something on this page!</h5>
-</section>
+<br><br>
+
+  <div class="section">
+    <div class="row">
+
+     <form class="col s12" method="post" action="{{url_for('result')}}">
+
+       <div class="row">
+
+         <div class="input-field col s6 offset-s3 center">
+           <input placeholder="Search for a word" id="word" name="word" type="text" class="validate">
+           <label for="word">Word to search</label>
+         </div>
+
+       </div>
+       <div class="row">
+         <div class="input-field col s12 center">
+           <input id="submit" type="submit" class="waves-effect waves-light btn-large">
+         </div>
+       </div>
+
+     </form>
+    </div>
+
+    {% if dr %}
+        <div class="section">
+          <div class="row">
+            <ul class="collection with-header">
+              <li class="collection-header strong">defn:<em> {{dr['word']}}/</em><h5> {{dr['intro']}} </h5></li>
+              {% for definition in dr['data'] %}
+              <li class="collection-item definition">{{definition}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+    {% endif %}
+
+
+  </div>
+
 
 {% endblock %}
