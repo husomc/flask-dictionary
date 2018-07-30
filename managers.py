@@ -9,8 +9,8 @@ class Dictionary(object):
         super(Dictionary, self).__init__()
         SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
         json_url = os.path.join(SITE_ROOT, 'static', 'db\data.json')
-        self.data = json.load(open(json_url))
-        #self.data=json.load(open("/app/static/db/data.json"))
+        #self.data = json.load(open(json_url))
+        self.data=json.load(open("/app/static/db/data.json"))
         #self.data=json.load(open("static\db\data.json"))
 
     def sim(self,word,ratio):
