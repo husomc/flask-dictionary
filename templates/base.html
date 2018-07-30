@@ -1,62 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+<head>
 
-    <title>Flask app</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Dictionary</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Dekko" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/materialize.min.css')}}">
+  <link href="{{ url_for('static',filename='css/style.css')}}" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for('static',filename='css/sticky-footer.css')}}" rel="stylesheet">
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="{{url_for('home')}}">New flask APP</a>
+</head>
+<body>
+  <div class="">
+  <nav class="blue-grey darken-4 nav-extended" role="navigation">
+    <div class="nav-wrapper container">
+      <div id="logo-container" class='row valign-wrapper brand-logo'>
 
 
-      <div class="ml-auto" id="navbarsExampleDefault">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active ">
-            <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{url_for('about')}}">About</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      </div><div class="hide-on-med-and-down"><a id="logo-container" href="{{url_for('home')}}" class="brand-logo" style="padding-left:80px">dicApp</a></div>
 
-    <main role="main" class="container">
 
-      <div class="starter-template">
-        <h1>Flask App</h1>
-        
-      </div>
-      {% block content%}
+      <ul id="nav-mobile" class="sidenav">
 
-      {% endblock %}
-     
-    </main><!-- /.container -->
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+  <div class="section no-pad-bot cyan darken-2" style="background: linear-gradient(to bottom,#263238  , #0097a7,white);" id="index-banner">
+    <div class="container">
+      <h2 class="header center white-text">Dictionary</h2>
+    </div>
+    <br><br><br><br>
+    </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <footer class="footer">
-        <div class="container center-align">
-         <a class="text-muted" href="http://hussainnaseem.xyz"> &copy; 2018 Hussain Naseem</a>
+<main>
+  <div class="container">
+
+{% block content %}
+{% endblock %}
+  </div>
+</main>
+
+  <footer class="page-footer cyan darken-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Hussain Naseem Inc.</h5>
+          <p class="grey-text text-lighten-4">dad | financial planner | house-husband | part time photographer | occasional programmer</p>
+
+
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+      <a class="cyan-text text-lighten-3" href="http://hussainnaseem.xyz"> &copy; 2018 Hussain Naseem</a>
+      </div>
+    </div>
+  </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="{{ url_for('static',filename='js/init.css')}}"></script>
+
   </body>
 </html>
